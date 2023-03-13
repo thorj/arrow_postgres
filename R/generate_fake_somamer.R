@@ -1,4 +1,4 @@
-pacman::p_load(parallel, arrow, DBI, RPostgres, here, data.table, tidyverse)
+pacman::p_load(parallel, arrow, here, data.table)
 
 gen_data <- function(i, n, arrow = F) {
   d <- 
