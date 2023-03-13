@@ -1,0 +1,95 @@
+  *-firmware
+       description: BIOS
+       vendor: INSYDE Corp.
+       physical id: 0
+       version: 03.10
+       date: 07/19/2022
+       size: 128KiB
+       capacity: 12MiB
+       capabilities: pci upgrade shadowing cdboot bootselect int9keyboard int10video acpi usb biosbootspecification uefi
+  *-cpu
+       description: CPU
+       product: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+       vendor: Intel Corp.
+       physical id: 4
+       bus info: cpu@0
+       version: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+       serial: To Be Filled By O.E.M.
+       slot: U3E1
+       size: 3GHz
+       capacity: 4800MHz
+       width: 64 bits
+       clock: 100MHz
+       configuration: cores=4 enabledcores=4 threads=8
+     *-cache:0
+          description: L1 cache
+          physical id: 6
+          slot: L1 Cache
+          size: 128KiB
+          capacity: 128KiB
+          capabilities: synchronous internal write-back instruction
+          configuration: level=1
+     *-cache:1
+          description: L2 cache
+          physical id: 7
+          slot: L2 Cache
+          size: 5MiB
+          capacity: 5MiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=2
+     *-cache:2
+          description: L3 cache
+          physical id: 8
+          slot: L3 Cache
+          size: 12MiB
+          capacity: 12MiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=3
+  *-cache
+       description: L1 cache
+       physical id: 5
+       slot: L1 Cache
+       size: 192KiB
+       capacity: 192KiB
+       capabilities: synchronous internal write-back data
+       configuration: level=1
+  *-memory
+       description: System Memory
+       physical id: 14
+       slot: System board or motherboard
+       size: 32GiB
+     *-bank:0
+          description: SODIMM DDR4 Synchronous 3200 MHz (0.3 ns)
+          product: 8ATF2G64HZ-3G2E2
+          vendor: Micron Technology
+          physical id: 0
+          serial: F1DDDC59
+          slot: Controller0-ChannelA-DIMM0
+          size: 16GiB
+          width: 64 bits
+          clock: 3200MHz (0.3ns)
+     *-bank:1
+          description: SODIMM DDR4 Synchronous 3200 MHz (0.3 ns)
+          product: 8ATF2G64HZ-3G2E2
+          vendor: Micron Technology
+          physical id: 1
+          serial: F1DDEE84
+          slot: Controller1-ChannelA-DIMM0
+          size: 16GiB
+          width: 64 bits
+          clock: 3200MHz (0.3ns)
+  *-nvme
+       description: NVMe device
+       product: WDC PC SN730 SDBPNTY-1T00
+       vendor: Sandisk Corp
+       physical id: 0
+       bus info: pci@0000:01:00.0
+       logical name: /dev/nvme0
+       version: 11140000
+       serial: 21131R800869
+       width: 64 bits
+       clock: 33MHz
+       capabilities: nvme pm msi msix pciexpress nvm_express bus_master cap_list
+       configuration: driver=nvme latency=0 nqn=nqn.2018-01.com.wdc:nguid:E8238FA6BF53-0001-001B448B48CCF835 state=live
+       resources: irq:16 memory:7a200000-7a203fff memory:7a204000-7a2040ff
+
