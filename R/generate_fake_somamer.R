@@ -27,7 +27,11 @@ dump_data_postgres <- function(i) {
 
 n <- 7500000
 k <- 250
-mclapply(X = 1:k, gen_data, n = n, arrow = T, mc.cores = 3)
+### Generate csv files, bulk load to database, and delete csv files
 mclapply(X = 1:k, gen_data, n = n, arrow = F, mc.cores = 3)
 mclapply(X = 1:k, dump_data_postgres, mc.cores = 3)
+
+### Generate parquet files
+mclapply(X = 1:k, gen_data, n = n, arrow = T, mc.cores = 3)
+
 
